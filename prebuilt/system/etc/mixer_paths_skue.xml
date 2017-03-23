@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- /**********uniscope-driver-modify-file-on-qualcomm-platform*****************/-->
 <!--
-    Copyright (c) 2014, The Linux Foundation. All rights reserved.
+    Copyright (c) 2014-2015, The Linux Foundation. All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are
@@ -81,6 +82,7 @@
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
     <ctl name="SPK DAC Switch" value="0" />
+    <ctl name="MICBIAS CAPLESS Switch" value="0" />
     <ctl name="EAR PA Gain" value="POS_1P5_DB" />
     <ctl name="MI2S_RX Channels" value="One" />
     <ctl name="MI2S_TX Channels" value="One" />
@@ -93,9 +95,9 @@
     <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="MultiMedia5 Mixer TERT_MI2S_TX" value="0" />
     <ctl name="MultiMedia1 Mixer TERT_MI2S_TX" value="0" />
     <ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
-    <ctl name="MultiMedia5 Mixer TERT_MI2S_TX" value="0" />
     <ctl name="PRI_MI2S_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="Voice_Tx Mixer TERT_MI2S_TX_Voice" value="0" />
     <ctl name="PRI_MI2S_RX Port Mixer INT_BT_SCO_TX" value="0" />
@@ -320,12 +322,12 @@
         <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="1" />
     </path>
 
-    <path name="audio-record capture-fm">
-        <ctl name="MultiMedia1 Mixer INTERNAL_FM_TX" value="1" />
-    </path>
-
     <path name="low-latency-record">
         <ctl name="MultiMedia5 Mixer TERT_MI2S_TX" value="1" />
+    </path>
+
+    <path name="audio-record capture-fm">
+        <ctl name="MultiMedia1 Mixer INTERNAL_FM_TX" value="1" />
     </path>
 
     <path name="fm-virtual-record capture-fm">
@@ -553,13 +555,25 @@
         <ctl name="ADC2 MUX" value="INP3" />
     </path>
 
+    <!-- //kangyan@uni_drv 20150319 enable spk begin-->
     <path name="speaker">
-        <ctl name="RX3 MIX1 INP1" value="RX1" />
-        <ctl name="SPK DAC Switch" value="1" />
+        <ctl name="RX1 MIX1 INP1" value="RX1" />
+		<ctl name="RX2 MIX1 INP1" value="RX2" />
+		<ctl name="RDAC2 MUX" value="RX2" />
+		<ctl name="HPHR" value="Switch"/> 
+		<ctl name="Ext Spk Switch" value="On"/>
     </path>
+    <!-- //kangyan@uni_drv 20150319 enable spk end-->
+    <!-- //kangyan@uni_drv 20150320 add second mic begin-->
+    <path name="secondary-mic">
+        <ctl name="DEC1 MUX" value="ADC2" />
+        <ctl name="MICBIAS CAPLESS Switch" value="1" />        
+        <ctl name="ADC2 MUX" value="INP3" />
+    </path>
+    <!-- //kangyan@uni_drv 20150320 add second mic end-->
 
     <path name="speaker-mic">
-        <path name="adc1" />
+        <path name="secondary-mic" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
@@ -647,7 +661,8 @@
 
     <path name="speaker-and-headphones">
         <path name="headphones" />
-        <path name="speaker" />
+	<!-- //kangyan@uni_drv 20150731 modify for speaker and headphone could be played ring at the same time when call is coming-->
+        <ctl name="Ext Spk Switch" value="On"/>
     </path>
 
     <path name="usb-headphones">
@@ -693,10 +708,14 @@
     <!-- Dual MIC devices -->
     <path name="speaker-dmic-endfire">
         <path name="adc1" />
-        <ctl name="ADC3 Volume" value="6" />
+   	<!-- uni@kangyan 20150826 when call is in handset mode,the other phone sound is very small begin -->
         <ctl name="DEC2 MUX" value="ADC2" />
         <ctl name="MI2S_TX Channels" value="Two" />
         <ctl name="ADC2 MUX" value="INP3" />
+		<!-- uni@xuwendong20141205 begin no audio when switch handfree to handset during recording  -->
+		<ctl name="IIR1 INP1 MUX" value="DEC1" /> 
+		<!-- uni@xuwendong20141205 end no audio when switch handfree to handset during recording  -->
+    	<!-- uni@kangyan 20150826 when call is in handset mode,the other phone sound is very small end -->
     </path>
 
     <path name="dmic-endfire">
@@ -733,10 +752,6 @@
 
     <path name="speaker-dmic-broadside">
         <path name="adc1" />
-        <ctl name="ADC3 Volume" value="6" />
-        <ctl name="DEC2 MUX" value="ADC2" />
-        <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="MI2S_TX Channels" value="Two" />
     </path>
 
     <path name="dmic-broadside">
