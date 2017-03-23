@@ -74,7 +74,7 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Graphics
-GET_FRAMEBUFFER_FORMAT_FROM_HWC := true
+GET_FRAMEBUFFER_FORMAT_FROM_HWC := false
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -121,7 +121,6 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
     device/huawei/y560/sepolicy
-
 BOARD_SEPOLICY_UNION += \
     file.te \
     file_contexts \
