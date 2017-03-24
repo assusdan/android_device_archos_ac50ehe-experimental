@@ -15,7 +15,7 @@
 #
 
 LOCAL_PATH := device/huawei/y560
-
+TARGET_OTA_ASSERT_DEVICE := y560,ac50ehe
 # Platform
 TARGET_NO_BOOTLOADER := true
 
