@@ -42,9 +42,8 @@ __BEGIN_DECLS
 #define LOG_LEVEL_I 6
 #define LOG_LEVEL_D 7
 
-#ifndef CFG_LOG_LEVEL
-#define CFG_LOG_LEVEL LOG_LEVEL_I
-#endif
+#undef CFG_LOG_LEVEL
+#define CFG_LOG_LEVEL LOG_LEVEL_D
 
 /* here use android api instead of cutils to make compatibility
 	with ndk build */
