@@ -64,7 +64,7 @@ static const char *input_sysfs_enable_list[] = {
    [GENERIC_PSENSOR] = "enable",
     [LEGACY_PSENSOR] = "enable",
         [CM36283_PS] = "enable",
-		[STK3x1x_PS] = "enable",
+		[STK3x1x_PS] = "device/enable",
 };
 
 
