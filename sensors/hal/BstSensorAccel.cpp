@@ -93,7 +93,7 @@ BstSensorAccel::BstSensorAccel(const char* name, SensorBase *delegate)
 		memset(mInputSysfsPath, 0, sizeof(mInputSysfsPath));
 		strcpy(mInputSysfsPath, "/sys/class/input/");
 		strcat(mInputSysfsPath, input_name);
-		strcat(mInputSysfsPath, "/device/");
+		strcat(mInputSysfsPath, "/device/device/");
 		mInputSysfsPathLen = strlen(mInputSysfsPath);
 	}
 
