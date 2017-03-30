@@ -107,24 +107,24 @@ BstSensorAccel::BstSensorAccel(const char* name, SensorBase *delegate)
 #else
 	mPlace = 4;
 #endif
-	mScale = 1;
+	mScale = 16000;
 	err = getInputSysfsNodeInt((const char*)"chip_id", &chip_id);
 	if (!err)
 	{
 		switch (chip_id)
 		{
 			case BMA_CHIPID_BMA222E:
-				mScale = 64;
+				mScale = 16000;
 				break;
 			case BMA_CHIPID_BMA250E:
-				mScale = 16;
+				mScale = 16000;
 				break;
 			case BMA_CHIPID_BMA255:
 			case BMA_CHIPID_BMA355:
-				mScale = 4;
+				mScale = 16000;
 				break;
 			case BMA_CHIPID_BMA280:
-				mScale = 1;
+				mScale = 16000;
 				break;
 			default:
 				PERR("<BST> unknow chip_id %d", chip_id);
@@ -206,9 +206,9 @@ int BstSensorAccel::processEvent(const input_event * event)
 		if (EV_ABS == event->type)
 		{
 			value = event->value;
-
+			value = value / mScale;
 #ifdef BST_BMA2X2_DATA_FULL_RANGE
-			value = value / mScale / 4;
+			//value = value / mScale / 4;
 #endif
 			switch (event->code)
 			{
