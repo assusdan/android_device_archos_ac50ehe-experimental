@@ -123,6 +123,19 @@ on boot
     # vibrator intensity
     chown system system /sys/class/timed_output/vibrator/vtg_level
 
+    chown system system /sys/class/sensors/bma2x2-accel/calibrate
+    chown system system /sys/class/sensors/bma2x2-accel/enable
+    chown system system /sys/class/sensors/bma2x2-accel/enable_wakeup
+    chown system system /sys/class/sensors/bma2x2-accel/flush
+    chown system system /sys/class/sensors/bma2x2-accel/max_latency
+    chown system system /sys/class/sensors/bma2x2-accel/poll_delay
+    chmod 0664 /sys/class/sensors/bma2x2-accel/calibrate
+    chmod 0664 /sys/class/sensors/bma2x2-accel/enable
+    chmod 0664 /sys/class/sensors/bma2x2-accel/enable_wakeup
+    chmod 0664 /sys/class/sensors/bma2x2-accel/flush
+    chmod 0664 /sys/class/sensors/bma2x2-accel/max_latency
+    chmod 0664 /sys/class/sensors/bma2x2-accel/poll_delay
+    
 service wcnss-service /system/bin/wcnss_service
     class main
     user system
@@ -154,6 +167,13 @@ service qcom-serialno-sh /system/bin/sh /init.qcom.serialno.sh
     oneshot
     disabled
 #added by litao end
+
+service sensord /system/bin/sensord
+    class main
+    user root
+
+on property:init.svc.zygote=restarting
+    restart sensord
 
 # Performance profiles
 # Powersave
