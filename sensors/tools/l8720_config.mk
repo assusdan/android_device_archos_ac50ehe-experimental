@@ -11,7 +11,7 @@ android_version ?= 5.0
 # bma255
 # bma280
 # bma222
-bma ?=
+bma ?= bma222e
 
 # bmm150
 
@@ -107,7 +107,7 @@ gyro_only ?= true
 # information   - print same or higher level than information,
 # 				provide addtional information as reference
 # debug   - print same or higher level than debug, normally for develop engineer use
-debug_trace_level ?= error
+debug_trace_level ?= debug
 
 # add the flag to mark the data trace relative function.
 # to reduce code/ram size when customer release
@@ -121,7 +121,7 @@ data_log_using_ram_buffer ?= true
 # file - log file is stored at the path /data/misc/sensor/sensord.log
 # logcat - log to android logcat, information can be retrieved by "adb logcat"
 # notice : this macro must be enabled together with debug_trace_level
-debug_log_method ?= file
+debug_log_method ?= logcat
 
 # debug timing accuracy of data sampling
 # notice that this macro must be disabled before release
