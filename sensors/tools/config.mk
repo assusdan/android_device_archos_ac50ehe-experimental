@@ -82,7 +82,7 @@ calibration_reset ?= false
 fast_calib_offset ?= false
 
 # hybrid hal support bypass accel sensor
-hybrid_hal = false
+hybrid_hal = true
 
 # gyroscope only working mode support
 gyro_only ?= true
