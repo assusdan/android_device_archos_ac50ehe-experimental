@@ -206,7 +206,7 @@ int BstSensorAccel::processEvent(const input_event * event)
 		if (EV_ABS == event->type)
 		{
 			value = event->value;
-			value = value / mScale;
+			value = value / mScale / 250;
 #ifdef BST_BMA2X2_DATA_FULL_RANGE
 			//value = value / mScale / 4;
 #endif
