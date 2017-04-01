@@ -90,7 +90,6 @@
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 
     <!-- Boolean indicating whether Softap requires reloading AP firmware -->
-    <bool name="config_wifiApFirmwareReload">false</bool>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
@@ -190,7 +189,6 @@
     <bool name="config_camera_sound_forced">true</bool>
 
     <!-- Configuration to enable non-default PDP during IWLAN -->
-    <bool name="config_feature_iwlan_enabled">true</bool>
 
     <!-- Flag specifying whether VoLTE is available on device -->
     <bool name="config_device_volte_available">true</bool>
@@ -249,13 +247,9 @@
     <bool name="useImsAlwaysForEmergencyCall">false</bool>
 
     <!-- Configuartion to support SIM refresh in STK command for dual mode card.-->
-    <bool name="config_sim_refresh_for_dual_mode_card">true</bool>
 
     <!-- monitor locale change -->
-    <bool name="config_monitor_locale_change">true</bool>
-
     <!-- display for radio tech -->
-    <bool name="config_display_rat">true</bool>
 
     <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -290,7 +284,6 @@
     <!-- Default value for proximity check on screen wake
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
     -->
-    <bool name="config_proximityCheckOnWake">true</bool>
 
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
@@ -309,12 +302,10 @@
 
     <!-- Defines the system property to set for performance profile xe: sys.cpu.modes. Leave it
          blank if the device do not support performance profiles -->
-    <string name="config_perf_profile_prop" translatable="false">sys.perf.profile</string>
 
     <!-- When config_perf_profile_prop is defined, this value MUST be the index of
          one of the listes values in frameworks/base/core/res/res/values/cm_arrays.xml
          for "perf_profile_values" array. Leave it blank if the device do not support
          performance profiles  -->
-    <string name="config_perf_profile_default_entry" translatable="false">1</string>
 
 </resources>

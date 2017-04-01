@@ -28,7 +28,7 @@
 
 #ifndef GPS_EXTENDED_H
 #define GPS_EXTENDED_H
-
+#include <cstring>
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */

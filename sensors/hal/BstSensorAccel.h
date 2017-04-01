@@ -149,6 +149,6 @@ protected:
 
 	static const struct bst_axis_remap
 		sTabAxisRemapDft[BST_DFT_AXIS_REMAP_TAB_SZ];
-	static const float SCALE_GRAVITY = GRAVITY_EARTH / 4096;
+	static constexpr float SCALE_GRAVITY = GRAVITY_EARTH / 4096;
 };
 #endif
