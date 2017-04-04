@@ -1,2 +1,1 @@
-# camera.presnapshot.state property
-# camera.                u:object_r:camera_prop:s0
+huawei.serialno                u:object_r:serialnoread_prop:s0

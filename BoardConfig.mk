@@ -19,8 +19,6 @@ TARGET_OTA_ASSERT_DEVICE := y560,ac50ehe,50e_Helium
 # Platform
 TARGET_NO_BOOTLOADER := true
 
-TARGET_USES_AOSP := true
-
 TARGET_BOARD_PLATFORM := msm8909
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno304
 TARGET_BOOTLOADER_BOARD_NAME := msm8909
@@ -37,7 +35,7 @@ TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 # Inline kernel building
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -60,12 +58,14 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
 # Build
-TARGET_SYSTEMIMAGE_USE_SQUISHER := true
+USE_CLANG_PLATFORM_BUILD := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
+COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 
 # Charger
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
@@ -76,7 +76,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Graphics
-GET_FRAMEBUFFER_FORMAT_FROM_HWC := false
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -85,10 +84,12 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
 # Hardware tunables framework
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw/
+BOARD_HARDWARE_CLASS := \
+    hardware/cyanogen/cmhw \
+    $(LOCAL_PATH)/cmhw
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
+# TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Lights
@@ -120,25 +121,7 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-
-BOARD_SEPOLICY_DIRS += \
-    device/huawei/y560/sepolicy
-BOARD_SEPOLICY_UNION += \
-    file.te \
-    file_contexts \
-    kernel.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    property.te \
-    property_contexts \
-    system_server.te \
-    wcnss_service.te
-
-# Vold
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun1/file
-
-#GPS
-USE_DEVICE_SPECIFIC_GPS := true
+BOARD_SEPOLICY_DIRS += device/huawei/y560/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true

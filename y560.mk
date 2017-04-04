@@ -46,13 +46,14 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
+
+# Compatibility
+PRODUCT_PACKAGES += \
+    libboringssl-compat \
+    libril_shim
 
 # Display
 PRODUCT_PACKAGES += \
@@ -73,10 +74,8 @@ PRODUCT_PACKAGES += \
 
 # FM radio
 PRODUCT_PACKAGES += \
-    FM2 \
-    FMRecord \
-    libqcomfm_jni \
-    qcom.fmradio
+    FMRadio \
+    libfmjni
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -97,15 +96,11 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    libdashplayer \
+    libextmedia_jni \
     libOmxCore \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw \
-    qcmediaplayer
-
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+    libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
@@ -152,5 +147,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
