@@ -6,19 +6,19 @@ TARGET_SCREEN_HEIGHT := 1280
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/y560/y560.mk)
+$(call inherit-product, device/archos/ac50ehe/ac50ehe.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := y560
-PRODUCT_NAME := lineage_y560
-PRODUCT_BRAND := Huawei
-PRODUCT_MODEL := Y5
-PRODUCT_MANUFACTURER := Huawei
-PRODUCT_RELEASE_NAME := Y5
+PRODUCT_DEVICE := ac50ehe
+PRODUCT_NAME := lineage_ac50ehe
+PRODUCT_BRAND := ARCHOS
+PRODUCT_MODEL := 50e_Helium
+PRODUCT_MANUFACTURER := ARCHOS
+PRODUCT_RELEASE_NAME := 50e_Helium
 
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="msm8909-user 5.1.1 HUAWEIY560-L01 C577B040 release-keys" \
-    BUILD_FINGERPRINT="HUAWEI/Y560-L01/HWY560-L:5.1.1/HUAWEIY560-L01/C577B040:user/release-keys"
+    PRIVATE_BUILD_DESC="AC50EHE-user 5.1.1 LMY47V eng.ProgrammerMonkey.20151008.133912 release-keys" \
+    BUILD_FINGERPRINT="archos/QCAC50EHE/ac50ehe:5.1.1/LMY47V/20150916.172018:user/release-keys"
 
-PRODUCT_GMS_CLIENTID_BASE := android-huawei
+PRODUCT_GMS_CLIENTID_BASE := android-archos
