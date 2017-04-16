@@ -131,9 +131,11 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=9
 ro.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=0
+persist.radio.multisim.config=dsds
 
 # Time services
 persist.timed.enable=true
+persist.sys.timezone=Europe/Moscow
 
 # USB
 persist.sys.usb.config=diag,serial_smd,serial_tty,mass_storage
