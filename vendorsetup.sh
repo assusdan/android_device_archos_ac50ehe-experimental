@@ -1,1 +1,1 @@
-add_lunch_combo lineage_y560-userdebug
+add_lunch_combo lineage_ac50ehe-userdebug
