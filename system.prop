@@ -132,6 +132,11 @@ ro.telephony.default_network=9
 ro.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=0
 persist.radio.multisim.config=dsds
+ro.telephony.ril.config=simactivation
+ro.telephony.call_ring.multiple=false
+ro.telephony.call_ring.delay=2500
+ro.ril.enable.a53=0
+ro.ril.enable.a52=1
 
 # Time services
 persist.timed.enable=true
