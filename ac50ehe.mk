@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-DEVICE_PACKAGE_OVERLAYS += device/huawei/y560/overlay
+DEVICE_PACKAGE_OVERLAYS += device/archos/ac50ehe/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-$(call inherit-product-if-exists, vendor/huawei/y560/y560-vendor.mk)
+$(call inherit-product-if-exists, vendor/archos/ac50ehe/ac50ehe-vendor.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -114,11 +114,11 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/huawei/y560/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/archos/ac50ehe/ramdisk,root)
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/huawei/y560/prebuilt/system,system)
+    $(call find-copy-subdir-files,*,device/archos/ac50ehe/prebuilt/system,system)
 
 # Media codecs
 PRODUCT_COPY_FILES += \
