@@ -42,6 +42,10 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
