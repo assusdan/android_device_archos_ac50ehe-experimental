@@ -18,8 +18,8 @@
 set -e
 
 # Required!
-DEVICE=y560
-VENDOR=huawei
+DEVICE=ac50ehe
+VENDOR=ARCHOS
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
