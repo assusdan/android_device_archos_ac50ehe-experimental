@@ -19,6 +19,7 @@ PRODUCT_RELEASE_NAME := 50e_Helium
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="AC50EHE-user 5.1.1 LMY47V eng.ProgrammerMonkey.20151008.133912 release-keys" \
-    BUILD_FINGERPRINT="archos/QCAC50EHE/ac50ehe:5.1.1/LMY47V/20150916.172018:user/release-keys"
+    BUILD_FINGERPRINT="archos/QCAC50EHE/ac50ehe:5.1.1/LMY47V/20150916.172018:user/release-keys" \
+    PRODUCT_MODEL="ARCHOS 50e Helium"
 
 PRODUCT_GMS_CLIENTID_BASE := android-archos
