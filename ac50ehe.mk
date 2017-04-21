@@ -15,6 +15,7 @@
 #
 
 DEVICE_PACKAGE_OVERLAYS += device/archos/ac50ehe/overlay
+PRODUCT_PACKAGE_OVERLAYS += device/doogee/x5pro/overlay # enable this to be able overlay a default wallpaper
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
