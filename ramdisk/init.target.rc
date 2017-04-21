@@ -175,3 +175,7 @@ service sensord /system/bin/sensord
 
 on property:init.svc.zygote=restarting
     restart sensord
+
+#Torch fix
+on property:sys.boot_completed=1
+    restart media
