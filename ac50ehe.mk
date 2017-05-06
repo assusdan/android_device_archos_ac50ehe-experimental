@@ -43,6 +43,9 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
+# Browser
+PRODUCT_PACKAGES += Jelly
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
