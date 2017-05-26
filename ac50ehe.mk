@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
     tinymix
 
 # Browser
-PRODUCT_PACKAGES += Jelly
+PRODUCT_PACKAGES += Gello
 
 # Camera
 PRODUCT_PACKAGES += \
