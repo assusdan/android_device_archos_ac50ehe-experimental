@@ -18,7 +18,7 @@
 set -e
 
 # Required!
-DEVICE=ac50ehe
+DEVICE=ac45che
 VENDOR=ARCHOS
 
 # Load extractutils and do some sanity checks

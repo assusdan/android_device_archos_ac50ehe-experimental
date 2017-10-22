@@ -21,7 +21,7 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-#define BTM_DEF_LOCAL_NAME   "ARCHOS 50e Helium"
+#define BTM_DEF_LOCAL_NAME   "ARCHOS 45c Helium"
 #define BLUETOOTH_QTI_SW TRUE
 // Disables read remote device feature
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
